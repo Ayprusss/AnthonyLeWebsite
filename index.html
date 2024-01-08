@@ -22,12 +22,29 @@
     <body>
         <!-- header of the porfolio website; should have an icon of some sort, will have to come back to this.-->
         
-        <div class="header-container" id="header-container">
+        <div class="header-container" id="header">
                 <!-- we are using flex display (or flexbox??) we need a div for every element. -->
             <div class="navbar-container">
-                <nav class="">
+                <nav>
                     <!-- just a p element for the logo that will maybe be changed to a logo; not too sure at this point -->
-                    <p class="header-fullName">Anthony Le</p>
+                    <p class="header-fullName"></p>
+                    <script> 
+                        var headerName = document.querySelector('.header-fullName');
+                        const text = "Anthony Le.";
+                        
+                        function typeWriterEffect(element, msg, i = 0) {
+                            if (i === text.length) {
+                                return;
+                            }
+                                element.textContent += msg[i];
+                                setTimeout(() => typeWriterEffect(element, msg, i + 1), 100); 
+                            
+                        }
+                        
+                        typeWriterEffect(headerName, text);
+                        alternatingPeriod(headerName, text);
+
+                    </script>
                     <!-- <a class="logo-name" href="#"></a>  -->
                     <ul>
 
@@ -42,7 +59,7 @@
                             <a href="#projects">Projects</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#contact">Contact</a> 
                         </li>
                     </ul>
                 </nav>
@@ -57,31 +74,29 @@
         <div class="background-container">
             <img src="assets/samurai-champloo-gif1.gif" id="background-image" \/>
             <script>
-                var arr = ["assets/blue-eye-samurai-gif1.gif", "assets/samurai-champloo-gif1.gif", "assets/samurai-champloo-gif2.gif"];
-                var backgroundImg = document.getElementById(background-image);
-                var counter = arr.indexOf(backgroundImg.src);
-
-                var startTime = new Date().getTime();
-                    var waitDone = false;
-                    while(!waitDone) {
-                        var endTime = new Date().getTime();
-                        if (endTime - startTime == 5000) {
-                            changeImage();
-                        }
-                    }
+                var arr = [
+                    "assets/nge-gif1.gif",
+                    "assets/samurai-champloo-gif2.gif",
+                    "assets/nge-gif2.gif",
+                    "assets/blue-eye-samurai-gif1.gif", 
+                    "assets/nge-gif3.gif",
+                    "assets/samurai-champloo-gif1.gif", 
+                    "assets/nge-gif5.gif"
+                    ];
+                var backgroundImg = document.getElementById('background-image');
+                var counter = 0
 
 
                 function changeImage() {
-                    if (counter == arr.length - 1) {
-                        counter = 0;
-                    } else {
-                        counter++;
-                    }
-                    backgroundImg.src = arr[counter];
-                    return;
+                    backgroundImg.src=arr[counter];
+                    counter = (counter+ 1) % arr.length; // modulo to always revolve around 0, 1, 2
+                    setTimeout(changeImage, 2500);
                 }
 
+                changeImage();
             </script>
+
+            <!-- about section-->
         </div>
         <div id="about">
             <div id="about-row">
@@ -98,17 +113,44 @@
                     shadow-intensity="1"
                     disable-pan=""
                     disable-zoome=""
-                    camera-orbit="210deg 80deg 200m"          
+                    camera-orbit="240deg 80deg 5m"          
                     ></model-viewer>
                 </div>
+                
 
+                <!-- might remove the second column...-->
                 <div id="about-column2">
                     <h1 class="about-header">Hi.</h1>
                     <p>
-
+                        My name is Anthony Le, and I am a second-year Computer Science student from the University of Ottawa. As a student who 
+                        is new to the world of computing and technology, I am thrilled to explore its contents and many intricacies.
                     </p>
                     <p>
+                        second paragraph.
 
+                    </p>
+                </div>
+
+                <div class="tabs">
+                    <p class="tabs-link active-link">Education</p>
+                    <p class="tabs-link">Skills</p>
+                    <p class="tabs-link">Hobbies</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="education">
+                    <p>
+
+                    </p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <p>
+
+                    </p>
+                </div>
+
+                <div class="tab-contents active-tab" id="hobbies">
+                    <p>
 
                     </p>
                 </div>
