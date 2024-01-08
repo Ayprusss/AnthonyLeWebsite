@@ -53,11 +53,40 @@
             <h1><span>Anthony Le</span></h1>
             <p>Software Developer :3</p>
         </div>
+
+        <div class="background-container">
+            <img src="assets/samurai-champloo-gif1.gif" id="background-image" \/>
+            <script>
+                var arr = ["assets/blue-eye-samurai-gif1.gif", "assets/samurai-champloo-gif1.gif", "assets/samurai-champloo-gif2.gif"];
+                var backgroundImg = document.getElementById(background-image);
+                var counter = arr.indexOf(backgroundImg.src);
+
+                var startTime = new Date().getTime();
+                    var waitDone = false;
+                    while(!waitDone) {
+                        var endTime = new Date().getTime();
+                        if (endTime - startTime == 5000) {
+                            changeImage();
+                        }
+                    }
+
+
+                function changeImage() {
+                    if (counter == arr.length - 1) {
+                        counter = 0;
+                    } else {
+                        counter++;
+                    }
+                    backgroundImg.src = arr[counter];
+                    return;
+                }
+
+            </script>
+        </div>
         <div id="about">
 
 
         </div>
-
 
     </body>
 </html>
