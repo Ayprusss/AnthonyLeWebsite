@@ -15,7 +15,8 @@
 
         <!-- ----- css file to be linked with html file-->
     <link rel="stylesheet" href="styles.css"/>
-
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
         <!-- ---- javascript file allowing for more interesting fonts. -- check kit.fontawesiome for different fonts. -->
     <script src="https://kit.fontawesome.com/bdb8f3ddd6.js" crossorigin="anonymous"></script>
     </head>
@@ -89,7 +90,7 @@
                     function typeWriteLoop(area, array) {
                         var typed = new Typed(area, {
                             strings: array,
-                            typeSpeed: 125,
+                            typeSpeed: 75,
                             backSpeed: 50,
                             loop: true });
                     }
@@ -104,15 +105,19 @@
 
                     var array1 = ["Anthony Le."];
                     var array2 = [
-                        "Software Developer.",
-                        "University Student.",
-                        "Human."];
-
+                        " ^500 Software Developer.",
+                        " ^500 University Student.",
+                        " ^500 Human."];
+                    var array3 = [" ^1000 My name is Anthony Le."];
 
                     typeWrite(".main-name", array1);
                     setTimeout(()=> {
                         typeWriteLoop(".typeWrite-subtext", array2)
                     }, 1000);
+
+                    setTimeout(()=> {
+                        typeWrite(".aboutName-typeWrite", array3)
+                    }, 2000);
                     
                 </script>
         </div>
@@ -146,13 +151,58 @@
         </div>
         <div id="about">
             <div id="about-row">
-                <div id="about-column1">
-                    <!-- add a slideshow into this column; will contain photos -->
+
+                <!-- photo slideshow in replace of the model viewer.-->
+                <div id="slideshow-container">
+                    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+                    <div class="swiper">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide"><img src="assets/Anthony-pic3.jpg" alt="image1"></div>
+                            <div class="swiper-slide"><img src="assets/Anthony-pic1.jpg"></div>
+                            <div class="swiper-slide"><img src="assets/Anthony-pic2.jpg"></div>
+                            <div class="swiper-slide"><img src="assets/Anthony-pic4.jpg"></div>
+                            <div class="swiper-slide"><img src="assets/Anthony-pic5.jpg"></div>
+                            <!--<div class="swiper-slide"><img src="assets/Anthony-pic6.jpg"></div> -->
+                        </div>
+
+                        <!-- needed for pagination-->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- navigation buttons -- may keep them disabled for time being.
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>-->
+
+                        <!-- scrollbar-->
+                        <div class="swiper-scrollbar"></div>
+
+                        <script>
+                            const swiper = new Swiper('.swiper', {
+                                
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                    clickable: true, 
+                                },
+
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                }
+                            })
+                        </script>
+                    </div>
                 </div>
                 
 
                 <!-- might remove the second column...-->
-                    <h1 class="about-header">Hi. My name is Anthony Le.</h1>
+                    <h1 class="about-header">Hi. <span class="aboutName-typeWrite"></span></h1>
                     <p id ="description-text">
                         I am a second-year Computer Science student from the University of Ottawa. As a student who 
                         is new to the world of computing and technology, I am thrilled to explore its contents and many intricacies.
