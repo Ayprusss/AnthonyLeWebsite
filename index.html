@@ -19,7 +19,10 @@
         <!-- ---- javascript file allowing for more interesting fonts. -- check kit.fontawesiome for different fonts. -->
     <script src="https://kit.fontawesome.com/bdb8f3ddd6.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="portfolio-body">
+
+
+
         <!-- header of the porfolio website; should have an icon of some sort, will have to come back to this.-->
         
         <div class="header-container" id="header">
@@ -48,7 +51,7 @@
                     <!-- <a class="logo-name" href="#"></a>  -->
                     <ul>
 
-                        <!-- for every li element; aekus has a onclick="closemenu()" on each one; will figure out why later-->
+                        <!-- for every li element-->
                         <li>
                             <a href="#about" ">About</a>
                         </li>
@@ -67,8 +70,14 @@
         </div>
 
         <div class="header-text">
-            <h1><span>Anthony Le</span></h1>
-            <p>Software Developer :3</p>
+            <h1><span class="main-name"></span>
+                <script> 
+                setTimeout(()=> typeWriterEffect(document.querySelector('.main-name'), text), 1000);
+                </script></h1>
+            <p class="main-subtext">Software Developer.</p>
+            <script>
+                var mainTitle = document.querySelector('.')
+            </script>
         </div>
 
         <div class="background-container">
@@ -90,7 +99,7 @@
                 function changeImage() {
                     backgroundImg.src=arr[counter];
                     counter = (counter+ 1) % arr.length; // modulo to always revolve around 0, 1, 2
-                    setTimeout(changeImage, 2500);
+                    setTimeout(changeImage, 1700); // may change this later on; value is set so that most gifs are played out at least once.
                 }
 
                 changeImage();
@@ -101,62 +110,61 @@
         <div id="about">
             <div id="about-row">
                 <div id="about-column1">
-                    <model-viewer
-                    src="assets/Desk.glb"
-                    poster="assets/Desk-photo.png"
-                    alt-="Desk by dook [CC-BY] (https://creativecommons.org/licenses/by/3.0/) 
-                    via Poly Pizza (https://poly.pizza/m/ISpMh81QGq)"
-                    loading="eager"
-                    camera-controls
-                    touch-action="pan-y"
-                    auto-rotate
-                    shadow-intensity="1"
-                    disable-pan=""
-                    disable-zoome=""
-                    camera-orbit="240deg 80deg 5m"          
-                    ></model-viewer>
                 </div>
                 
 
                 <!-- might remove the second column...-->
-                <div id="about-column2">
-                    <h1 class="about-header">Hi.</h1>
-                    <p>
-                        My name is Anthony Le, and I am a second-year Computer Science student from the University of Ottawa. As a student who 
+                    <h1 class="about-header">Hi. My name is Anthony Le.</h1>
+                    <p id ="description-text">
+                        I am a second-year Computer Science student from the University of Ottawa. As a student who 
                         is new to the world of computing and technology, I am thrilled to explore its contents and many intricacies.
-                    </p>
-                    <p>
-                        second paragraph.
+                        I am mainly interested in Artificial Intelligence and Machine learning, but as I am still new to coding,  
 
                     </p>
-                </div>
+                    <p id ="description-text2">
+                        second paragraph.
+                    </p>
+                
 
                 <div class="tabs">
-                    <p class="tabs-link active-link">Education</p>
+                    <p class="tabs-link">Education</p>
                     <p class="tabs-link">Skills</p>
                     <p class="tabs-link">Hobbies</p>
                 </div>
 
                 <div class="tab-contents active-tab" id="education">
                     <p>
-
                     </p>
                 </div>
 
                 <div class="tab-contents active-tab" id="skills">
                     <p>
-
+                        
                     </p>
                 </div>
 
                 <div class="tab-contents active-tab" id="hobbies">
                     <p>
 
-                    </p>
+                    </p>    
                 </div>
             </div>
 
         </div>
 
+
+        <!-- Experience Section -->
+        <div>
+
+
+        </div>
+
+        <!-- Projects section -->
+        <div>
+
+
+        </div>
+
+        <!-- Contact Section -->
     </body>
 </html>
