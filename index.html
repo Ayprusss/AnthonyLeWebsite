@@ -31,6 +31,8 @@
                 <nav>
                     <!-- just a p element for the logo that will maybe be changed to a logo; not too sure at this point -->
                     <p class="header-fullName"></p>
+
+
                     <script> 
                         var headerName = document.querySelector('.header-fullName');
                         const text = "Anthony Le.";
@@ -47,7 +49,7 @@
                         typeWriterEffect(headerName, text);
                         alternatingPeriod(headerName, text);
 
-                    </script>
+                    </script> 
                     <!-- <a class="logo-name" href="#"></a>  -->
                     <ul>
 
@@ -71,13 +73,48 @@
 
         <div class="header-text">
             <h1><span class="main-name"></span>
+
+                <!--
                 <script> 
                 setTimeout(()=> typeWriterEffect(document.querySelector('.main-name'), text), 1000);
-                </script></h1>
-            <p class="main-subtext">Software Developer.</p>
+                </script> --></h1>
+            <p class="main-subtext"><span class="typeWrite-subtext"></span></p>
             <script>
                 var mainTitle = document.querySelector('.')
             </script>
+
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+                <script>
+
+                    function typeWriteLoop(area, array) {
+                        var typed = new Typed(area, {
+                            strings: array,
+                            typeSpeed: 125,
+                            backSpeed: 50,
+                            loop: true });
+                    }
+
+                    function typeWrite(area, array) {
+                        var typed = new Typed(area, {
+                            strings: array,
+                            typeSpeed: 125,
+                            loop: false
+                        });
+                    }
+
+                    var array1 = ["Anthony Le."];
+                    var array2 = [
+                        "Software Developer.",
+                        "University Student.",
+                        "Human."];
+
+
+                    typeWrite(".main-name", array1);
+                    setTimeout(()=> {
+                        typeWriteLoop(".typeWrite-subtext", array2)
+                    }, 1000);
+                    
+                </script>
         </div>
 
         <div class="background-container">
@@ -110,6 +147,7 @@
         <div id="about">
             <div id="about-row">
                 <div id="about-column1">
+                    <!-- add a slideshow into this column; will contain photos -->
                 </div>
                 
 
