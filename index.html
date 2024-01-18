@@ -150,94 +150,105 @@
             <!-- about section-->
         </div>
         <div id="about">
-            <div id="about-row">
+            <div class="about-row">
 
                 <!-- photo slideshow in replace of the model viewer.-->
-                <div id="slideshow-container">
-                    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+               
+                    <div class="about-col1" >
+                        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-                    <div class="swiper">
+                        <!-- start of the photo slideshow-->
+                        <div class="image-slideshow">
+                            <div class="swiper">
 
-                        <div class="swiper-wrapper">
+                                <div class="swiper-wrapper">
 
-                            <div class="swiper-slide"><img src="assets/Anthony-pic3.jpg" alt="image1"></div>
-                            <div class="swiper-slide"><img src="assets/Anthony-pic1.jpg"></div>
-                            <div class="swiper-slide"><img src="assets/Anthony-pic2.jpg"></div>
-                            <div class="swiper-slide"><img src="assets/Anthony-pic4.jpg"></div>
-                            <div class="swiper-slide"><img src="assets/Anthony-pic5.jpg"></div>
-                            <!--<div class="swiper-slide"><img src="assets/Anthony-pic6.jpg"></div> -->
+                                    <div class="swiper-slide"><img src="assets/Anthony-pic3.jpg"></div>
+                                    <div class="swiper-slide"><img src="assets/Anthony-pic1.jpg"></div>
+                                    <div class="swiper-slide"><img src="assets/Anthony-pic2.jpg"></div>
+                                    <div class="swiper-slide"><img src="assets/Anthony-pic4.jpg"></div>
+                                    <div class="swiper-slide"><img src="assets/Anthony-pic5.jpg"></div>
+                                    <!--<div class="swiper-slide"><img src="assets/Anthony-pic6.jpg"></div> -->
+                                </div>
+
+                                <!-- needed for pagination-->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- navigation buttons -- may keep them disabled for time being.-->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+
+                                <script>
+                                    const swiper = new Swiper('.swiper', {
+                                        
+                                        loop: true,
+                                        autoplay: {
+                                            delay: 3000,
+                                            disableOnInteraction: false,
+                                        },
+                                        pagination: {
+                                            el: '.swiper-pagination',
+                                            clickable: true, 
+                                        },
+
+                                        navigation: {
+                                            nextEl: '.swiper-button-next',
+                                            prevEl: '.swiper-button-prev',
+                                        }
+                                    })
+                                </script>
+                            </div>
                         </div>
-
-                        <!-- needed for pagination-->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- navigation buttons -- may keep them disabled for time being.
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>-->
-
-                        <!-- scrollbar-->
-                        <div class="swiper-scrollbar"></div>
-
-                        <script>
-                            const swiper = new Swiper('.swiper', {
-                                
-                                loop: true,
-                                autoplay: {
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                },
-                                pagination: {
-                                    el: '.swiper-pagination',
-                                    clickable: true, 
-                                },
-
-                                navigation: {
-                                    nextEl: '.swiper-button-next',
-                                    prevEl: '.swiper-button-prev',
-                                }
-                            })
-                        </script>
                     </div>
-                </div>
-                
 
                 <!-- might remove the second column...-->
-                    <h1 class="about-header">Hi. <span class="aboutName-typeWrite"></span></h1>
+                <div class="about-col2">
+                    <h1 class="about-header">Hi! <span class="aboutName-typeWrite"></span></h1>
                     <p id ="description-text">
-                        I am a second-year Computer Science student from the University of Ottawa. As a student who 
-                        is new to the world of computing and technology, I am thrilled to explore its contents and many intricacies.
-                        I am mainly interested in Artificial Intelligence and Machine learning, but as I am still new to coding,  
-
+                            I am a second-year Computer Science student from the University of Ottawa. As a student who 
+                            is new to the world of computing and technology, I am thrilled to explore its contents and many intricacies.
+                            I am mainly interested in Artificial Intelligence and Machine learning, but as I am still new to coding,  
                     </p>
-                    <p id ="description-text2">
-                        second paragraph.
-                    </p>
-                
+                        <p id ="description-text2">
+                            second paragraph.
+                        </p>
+                    <script>
+                        var menu = document.getElementById("menu");
 
-                <div class="tabs">
-                    <p class="tabs-link">Education</p>
-                    <p class="tabs-link">Skills</p>
-                    <p class="tabs-link">Hobbies</p>
-                </div>
+                        function openmenu() {
+                            menu.style.right="0";
+                        }
 
-                <div class="tab-contents active-tab" id="education">
-                    <p>
-                    </p>
-                </div>
+                        function closemenu() {
+                            menu.style.right = "-200px"
+                        }
+                    </script>
 
-                <div class="tab-contents active-tab" id="skills">
-                    <p>
-                        
-                    </p>
-                </div>
+                    <div class="tabs">
+                        <p class="tabs-link active-link" onclick="opentab('education')">Education</p>
+                        <p class="tabs-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tabs-link" onclick="opentab('hobbies')">Hobbies</p>
+                    </div>
 
-                <div class="tab-contents active-tab" id="hobbies">
-                    <p>
+                    <div class="tab-contents active-tab" id="education">
+                        <p>
 
-                    </p>    
+                        </p>
+                    </div>
+
+                    <div class="tab-contents" id="skills">
+                        <p>
+                            
+                        </p>
+                    </div>
+
+                    <div class="tab-contents" id="hobbies">
+                        <p>
+
+                        </p>    
+                    </div>
                 </div>
             </div>
-
         </div>
 
 

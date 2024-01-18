@@ -99,6 +99,10 @@ li {
     padding-left: 7%;
   }
 
+  .header-text .typeWrite-subtext {
+    color:#5b626c;
+  }
+
   .header-text p {
     padding-left: 12%;
     padding-bottom: 2%;
@@ -114,29 +118,121 @@ li {
     z-index: 1;
   }
 
-.image-container {
-    width: 25%;
-    height: 40vh;
-    display: flex;
-    align-items:center;
-    justify-content: center;
+.about-row {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
 }
 
-.swiper {
+/* start of slideshow css*/
+
+.image-slideshow {
+    margin-left: 30px;
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+.about-col1 {
+    width:25%;
+    height: 50vh;
     display:relative;
-    width: 25%;
+    align-items:center;
+    justify-content:center;
+
+    /* attribute for the flex-basis */
+    flex-basis: 35%;
+}
+.swiper {
+    width: 80%;
     height: fit-content;
 }
 
 .swiper-slide img {
-    width: 100%;
+    width:100%;
 }
 
- .swiper .swiper-button-prev, .swiper .swiper-button-next {
-    color: #FFFFFF;
+.swiper .swiper-button-prev, .swiper .swiper-button-next {
+    color: #FFF;
+}
+
+.swiper .swiper-pagination-bullet {
+    background-color: #FFF;
+}
+
+/* end of slideshow css */
+
+.about-col2 {
+    width:45%;
+    flex-basis: 50%;
+    margin-left: 40%;
     
 }
 
-.swiper .swiper-pagination-bullet-active {
-    background: #fff;
+.about-header {
+    font-size: 48px;
+    font-weight: 600;
+    
+}
+
+.tabs{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor:pointer;
+    position: relative;
+}
+
+.tab-links::after {
+content: "";
+  width: 0;
+  height: 3px;
+  background: #5b626c;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+  }
+
+.tab-contents {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #5b626c;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display:none;
+}
+
+.tab-contents .active-tab{
+    display: block;
+}
+
+
+.tab-contents {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #5b626c;
+    font-size: 14px;
+}
+
+.tab-contents {
+    list-style: none;
+    margin: 10px 0;
+    display: none;
 }
